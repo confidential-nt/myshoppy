@@ -1,22 +1,33 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { LuShoppingBag } from "react-icons/lu";
-import { AiOutlineShoppingCart } from "react-icons/ai";
+import CartsIcon from "./CartsIcon";
 import { useAuthContext } from "../context/AuthContext";
 import { useUserContext } from "../context/UserContext";
+import { useUserRepositoryContext } from "../context/UserRepositoryContext";
 
 export default function Header() {
   const { auth } = useAuthContext();
-  const { user, logUserIn } = useUserContext();
+  const { uid, logUserIn } = useUserContext();
+  const { userRepository } = useUserRepositoryContext();
 
   const handleLogin = () => {
     auth.login();
-    auth.onStateChange(logUserIn);
+    auth.onStateChange((user) => {
+      if (user) {
+        logUserIn(user.uid);
+        userRepository.insert(user);
+      }
+    });
   };
 
   const handleLogout = () => {
     auth.logout();
-    auth.onStateChange(logUserIn);
+    auth.onStateChange((user) => {
+      if (!user) {
+        logUserIn(user);
+      }
+    });
   };
 
   return (
@@ -31,10 +42,8 @@ export default function Header() {
         <Link to="/products" className="text-xs mr-3">
           Products
         </Link>
-        <Link to="/carts" className="mr-7 text-xl">
-          <AiOutlineShoppingCart />
-        </Link>
-        {user ? (
+        <CartsIcon />
+        {uid ? (
           <button
             onClick={handleLogout}
             type="button"

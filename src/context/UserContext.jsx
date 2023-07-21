@@ -4,21 +4,25 @@ import { useAuthContext } from "./AuthContext";
 const UserContext = createContext();
 
 export function UserProvider({ children }) {
-  const [user, setUser] = useState();
+  const [uid, setUserId] = useState();
   const { auth } = useAuthContext();
 
   useEffect(() => {
-    auth.onStateChange(setUser);
+    auth.onStateChange((user) => {
+      if (user) {
+        setUserId(user.uid);
+      }
+    });
   }, [auth]);
 
   const logUserIn = (uid) => {
-    setUser(uid);
+    setUserId(uid);
   };
 
   return (
     <UserContext.Provider
       value={{
-        user,
+        uid,
         logUserIn,
       }}
     >

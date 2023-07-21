@@ -19,7 +19,7 @@ export default class Auth {
   onStateChange(callback) {
     onAuthStateChanged(auth, (user) => {
       if (user) {
-        callback(user.uid);
+        callback(user);
       } else {
         callback(null);
       }

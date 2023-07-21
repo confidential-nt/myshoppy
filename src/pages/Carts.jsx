@@ -5,13 +5,13 @@ import { useUserContext } from "../context/UserContext";
 export default function Carts() {
   const navigate = useNavigate();
 
-  const { user } = useUserContext();
+  const { uid } = useUserContext();
 
   useEffect(() => {
-    if (!user) {
+    if (!uid) {
       navigate("/");
     }
-  }, [user, navigate]);
+  }, [uid, navigate]);
 
   return <div>여기는 계산페이지</div>;
 }
