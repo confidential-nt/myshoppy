@@ -7,6 +7,7 @@ export default class UserRepository {
       set(ref(database, "users/" + user.uid), {
         name: user.displayName,
         email: user.email,
+        photoURL: user.photoURL,
         carts: {},
       });
     });

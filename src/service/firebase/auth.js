@@ -18,6 +18,7 @@ export default class Auth {
 
   onStateChange(callback) {
     onAuthStateChanged(auth, (user) => {
+      console.log(user);
       if (user) {
         callback(user);
       } else {

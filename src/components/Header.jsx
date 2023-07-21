@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { LuShoppingBag } from "react-icons/lu";
 import CartsIcon from "./CartsIcon";
+import PencilIcon from "./PencilIcon";
 import { useAuthContext } from "../context/AuthContext";
 import { useUserContext } from "../context/UserContext";
 import { useUserRepositoryContext } from "../context/UserRepositoryContext";
@@ -25,7 +26,7 @@ export default function Header() {
     auth.logout();
     auth.onStateChange((user) => {
       if (!user) {
-        logUserIn(user);
+        logUserIn(null);
       }
     });
   };
@@ -43,6 +44,7 @@ export default function Header() {
           Products
         </Link>
         <CartsIcon />
+        <PencilIcon />
         {uid ? (
           <button
             onClick={handleLogout}
