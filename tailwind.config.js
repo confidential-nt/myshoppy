@@ -6,6 +6,9 @@ module.exports = {
       colors: {
         shoppypink: "#FB6B6F",
       },
+      backgroundImage: {
+        bannerImage: "url('/public/images/banner.jpg')",
+      },
     },
   },
   plugins: [],

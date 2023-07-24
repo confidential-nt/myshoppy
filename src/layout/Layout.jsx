@@ -6,7 +6,9 @@ export default function Layout() {
   return (
     <div className="pr-36 pl-36">
       <Header />
-      <Outlet />
+      <main>
+        <Outlet />
+      </main>
     </div>
   );
 }
