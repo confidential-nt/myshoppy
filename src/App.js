@@ -9,6 +9,9 @@ import AddProduct from "./pages/AddProduct";
 import { UserProvider } from "./context/UserContext";
 import { AuthProvider } from "./context/AuthContext";
 import { UserRepositoryProvider } from "./context/UserRepositoryContext";
+import ImageUploader from "./service/cloudinary/image-uploader";
+
+const imageUploader = new ImageUploader();
 
 function App() {
   return (
@@ -20,7 +23,10 @@ function App() {
               <Route index path="/" element={<Main />} />
               <Route path="/products" element={<Products />} />
               <Route path="/products/:postId" element={<ProductDetail />} />
-              <Route path="/products/add" element={<AddProduct />} />
+              <Route
+                path="/products/add"
+                element={<AddProduct imageUploader={imageUploader} />}
+              />
               <Route path="/carts" element={<Carts />} />
             </Route>
           </Routes>
