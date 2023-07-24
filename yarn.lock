@@ -5160,27 +5160,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cloudinary-core@npm:^2.13.0":
-  version: 2.13.0
-  resolution: "cloudinary-core@npm:2.13.0"
-  peerDependencies:
-    lodash: ">=4.0"
-  checksum: 5485fbc094b0722f6d4c6becfde431d3042c3c926a69c4bc2f6b373ac059b9b798703845c6cbf4a55ee2eb1c7718f5ec5130772117419755015b04dabd369be5
-  languageName: node
-  linkType: hard
-
-"cloudinary@npm:^1.38.0":
-  version: 1.38.0
-  resolution: "cloudinary@npm:1.38.0"
-  dependencies:
-    cloudinary-core: ^2.13.0
-    core-js: ^3.30.1
-    lodash: ^4.17.21
-    q: ^1.5.1
-  checksum: 5cb85a6ba2f0571ed4823ccdd2238a930e7d3bfd12a468204ff405c0ae38031477e4f618fe857b722fcb8ba116392f25205dd11a7d750af2757e3d8448c228cd
-  languageName: node
-  linkType: hard
-
 "co@npm:^4.6.0":
   version: 4.6.0
   resolution: "co@npm:4.6.0"
@@ -5424,7 +5403,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"core-js@npm:^3.19.2, core-js@npm:^3.30.1":
+"core-js@npm:^3.19.2":
   version: 3.31.1
   resolution: "core-js@npm:3.31.1"
   checksum: 14519213a63c55cf188bdd2f4dece54583feaf6b90e75d6c65e07f509cd487055bf64898aeda7c97c36029ac1ea2f2ed8e4b02281553f6a257e7143a32a14015
@@ -11479,7 +11458,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"q@npm:^1.1.2, q@npm:^1.5.1":
+"q@npm:^1.1.2":
   version: 1.5.1
   resolution: "q@npm:1.5.1"
   checksum: 147baa93c805bc1200ed698bdf9c72e9e42c05f96d007e33a558b5fdfd63e5ea130e99313f28efc1783e90e6bdb4e48b67a36fcc026b7b09202437ae88a1fb12
@@ -12399,7 +12378,6 @@ __metadata:
     "@testing-library/jest-dom": ^5.14.1
     "@testing-library/react": ^13.0.0
     "@testing-library/user-event": ^13.2.1
-    cloudinary: ^1.38.0
     eslint-config-react-app: ^7.0.1
     firebase: ^10.0.0
     react: ^18.2.0
