@@ -32,6 +32,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@testing-library/jest-dom", "npm:5.16.5"],\
             ["@testing-library/react", "virtual:16e654a9d365e02f7e28ac465e17fac93840604085351a9f6343f69b3a793d34618b538eea2150d2f1f567e908e7676db665faf19a175c38c1abccd63a770793#npm:13.4.0"],\
             ["@testing-library/user-event", "virtual:16e654a9d365e02f7e28ac465e17fac93840604085351a9f6343f69b3a793d34618b538eea2150d2f1f567e908e7676db665faf19a175c38c1abccd63a770793#npm:13.5.0"],\
+            ["cloudinary", "npm:1.38.0"],\
             ["eslint-config-react-app", "virtual:16e654a9d365e02f7e28ac465e17fac93840604085351a9f6343f69b3a793d34618b538eea2150d2f1f567e908e7676db665faf19a175c38c1abccd63a770793#npm:7.0.1"],\
             ["firebase", "npm:10.0.0"],\
             ["react", "npm:18.2.0"],\
@@ -8060,6 +8061,41 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["string-width", "npm:4.2.3"],\
             ["strip-ansi", "npm:6.0.1"],\
             ["wrap-ansi", "npm:7.0.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["cloudinary", [\
+        ["npm:1.38.0", {\
+          "packageLocation": "./.yarn/cache/cloudinary-npm-1.38.0-b9fb1b85e0-5cb85a6ba2.zip/node_modules/cloudinary/",\
+          "packageDependencies": [\
+            ["cloudinary", "npm:1.38.0"],\
+            ["cloudinary-core", "virtual:b9fb1b85e027c7974648c0d221850c3c95ffe0894d622d8b843bafc0081c064c4fa030eae6e4f3f0abaf3b32f2b4bfbf1db83e979109e62b50485aa84913b158#npm:2.13.0"],\
+            ["core-js", "npm:3.31.1"],\
+            ["lodash", "npm:4.17.21"],\
+            ["q", "npm:1.5.1"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["cloudinary-core", [\
+        ["npm:2.13.0", {\
+          "packageLocation": "./.yarn/cache/cloudinary-core-npm-2.13.0-af238250d5-5485fbc094.zip/node_modules/cloudinary-core/",\
+          "packageDependencies": [\
+            ["cloudinary-core", "npm:2.13.0"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:b9fb1b85e027c7974648c0d221850c3c95ffe0894d622d8b843bafc0081c064c4fa030eae6e4f3f0abaf3b32f2b4bfbf1db83e979109e62b50485aa84913b158#npm:2.13.0", {\
+          "packageLocation": "./.yarn/__virtual__/cloudinary-core-virtual-240a177a44/0/cache/cloudinary-core-npm-2.13.0-af238250d5-5485fbc094.zip/node_modules/cloudinary-core/",\
+          "packageDependencies": [\
+            ["cloudinary-core", "virtual:b9fb1b85e027c7974648c0d221850c3c95ffe0894d622d8b843bafc0081c064c4fa030eae6e4f3f0abaf3b32f2b4bfbf1db83e979109e62b50485aa84913b158#npm:2.13.0"],\
+            ["@types/lodash", null],\
+            ["lodash", "npm:4.17.21"]\
+          ],\
+          "packagePeers": [\
+            "@types/lodash",\
+            "lodash"\
           ],\
           "linkType": "HARD"\
         }]\
@@ -17252,6 +17288,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@testing-library/jest-dom", "npm:5.16.5"],\
             ["@testing-library/react", "virtual:16e654a9d365e02f7e28ac465e17fac93840604085351a9f6343f69b3a793d34618b538eea2150d2f1f567e908e7676db665faf19a175c38c1abccd63a770793#npm:13.4.0"],\
             ["@testing-library/user-event", "virtual:16e654a9d365e02f7e28ac465e17fac93840604085351a9f6343f69b3a793d34618b538eea2150d2f1f567e908e7676db665faf19a175c38c1abccd63a770793#npm:13.5.0"],\
+            ["cloudinary", "npm:1.38.0"],\
             ["eslint-config-react-app", "virtual:16e654a9d365e02f7e28ac465e17fac93840604085351a9f6343f69b3a793d34618b538eea2150d2f1f567e908e7676db665faf19a175c38c1abccd63a770793#npm:7.0.1"],\
             ["firebase", "npm:10.0.0"],\
             ["react", "npm:18.2.0"],\
