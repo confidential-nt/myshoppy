@@ -10,8 +10,10 @@ import { UserProvider } from "./context/UserContext";
 import { AuthProvider } from "./context/AuthContext";
 import { UserRepositoryProvider } from "./context/UserRepositoryContext";
 import ImageUploader from "./service/cloudinary/image-uploader";
+import ProductRepository from "./service/firebase/product-repository";
 
 const imageUploader = new ImageUploader();
+const productRepository = new ProductRepository();
 
 function App() {
   return (
@@ -25,7 +27,12 @@ function App() {
               <Route path="/products/:postId" element={<ProductDetail />} />
               <Route
                 path="/products/add"
-                element={<AddProduct imageUploader={imageUploader} />}
+                element={
+                  <AddProduct
+                    imageUploader={imageUploader}
+                    productRepository={productRepository}
+                  />
+                }
               />
               <Route path="/carts" element={<Carts />} />
             </Route>
