@@ -22,9 +22,21 @@ function App() {
         <UserRepositoryProvider>
           <Routes>
             <Route path="/" element={<Layout />}>
-              <Route index path="/" element={<Main />} />
-              <Route path="/products" element={<Products />} />
-              <Route path="/products/:postId" element={<ProductDetail />} />
+              <Route
+                index
+                path="/"
+                element={<Main productRepository={productRepository} />}
+              />
+              <Route
+                path="/products"
+                element={<Products productRepository={productRepository} />}
+              />
+              <Route
+                path="/products/:postId"
+                element={
+                  <ProductDetail productRepository={productRepository} />
+                }
+              />
               <Route
                 path="/products/add"
                 element={

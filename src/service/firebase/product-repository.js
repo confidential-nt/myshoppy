@@ -1,5 +1,5 @@
 import { database } from "./firebase";
-import { ref, child, push, set } from "firebase/database";
+import { ref, child, push, set, onValue } from "firebase/database";
 
 export default class ProductRepository {
   async insert(product) {
@@ -13,5 +13,15 @@ export default class ProductRepository {
       desc: product.desc,
       options: product.options,
     });
+  }
+
+  findAll(callback) {
+    onValue(
+      ref(database, "products/"),
+      (snapshot) => {
+        callback(snapshot.val());
+      },
+      { onlyOnce: true }
+    );
   }
 }
