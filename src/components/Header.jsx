@@ -32,7 +32,7 @@ export default function Header() {
   };
 
   return (
-    <header className="w-full flex justify-between items-center pt-1 pr-8 pb-1 pl-2 border">
+    <header className="w-full flex justify-between items-center pt-1 pr-8 pb-1 pl-2 border-b">
       <div>
         <Link to="/" className="flex items-center text-shoppypink text-xl">
           <LuShoppingBag className="mr-2" />
