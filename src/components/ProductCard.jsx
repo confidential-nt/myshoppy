@@ -1,9 +1,19 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
-export default function ProductCard({ product }) {
-  console.log(product);
+export default function ProductCard({ product, id }) {
+  const navigate = useNavigate();
   return (
-    <li className="basis-1/4 mr-3 last:mr-0 cursor-pointer shadow-lg hover:scale-105 transition">
+    <li
+      onClick={() =>
+        navigate(`/products/${id}`, {
+          state: {
+            product,
+          },
+        })
+      }
+      className="basis-1/4 mr-3 last:mr-0 cursor-pointer shadow-lg hover:scale-105 transition"
+    >
       <div className="w-full">
         <img
           src={product.imageURL}
