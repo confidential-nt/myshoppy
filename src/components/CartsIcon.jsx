@@ -16,6 +16,9 @@ export default function CartsIcon() {
         setNumber(number);
       }
     });
+    userRepository.onUpdateCarts((carts) => {
+      setNumber(Object.values(carts).length);
+    }, uid);
   }, [uid, userRepository]);
 
   return (

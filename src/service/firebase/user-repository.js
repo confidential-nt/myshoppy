@@ -36,4 +36,9 @@ export default class UserRepository {
     updates["users/" + uid + "/carts/" + productId] = true;
     return update(ref(database), updates);
   }
+
+  onUpdateCarts(callback, uid) {
+    const cartsRef = ref(database, "users/" + uid + "/carts");
+    onValue(cartsRef, (snapshot) => callback(snapshot.val()));
+  }
 }
