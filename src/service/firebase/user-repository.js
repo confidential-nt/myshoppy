@@ -1,5 +1,5 @@
 import { database } from "./firebase";
-import { ref, set, onValue } from "firebase/database";
+import { ref, set, onValue, update } from "firebase/database";
 
 export default class UserRepository {
   insert(user) {
@@ -29,5 +29,11 @@ export default class UserRepository {
         callback();
       }
     });
+  }
+
+  updateCarts(uid, productId) {
+    const updates = {};
+    updates["users/" + uid + "/carts/" + productId] = true;
+    return update(ref(database), updates);
   }
 }

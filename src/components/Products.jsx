@@ -5,7 +5,7 @@ export default function Products({ productRepository }) {
   const [products, setProducts] = useState();
   useEffect(() => {
     productRepository.findAll(setProducts);
-  }, []);
+  }, [productRepository]);
   return (
     <ul className="flex mt-4 pr-2 pl-3">
       {products &&

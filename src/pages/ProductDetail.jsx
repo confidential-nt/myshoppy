@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { useLocation, useParams } from "react-router-dom";
 import { useUserContext } from "../context/UserContext";
 import { useUserRepositoryContext } from "../context/UserRepositoryContext";
 
 export default function ProductDetail() {
+  const [complete, setComplete] = useState(false);
+
   const {
     state: { product },
   } = useLocation();
@@ -13,8 +15,13 @@ export default function ProductDetail() {
 
   const { productId } = useParams();
 
-  const handleClick = (e) => {
+  const handleClick = async () => {
     if (!uid) return;
+    userRepository.updateCarts(uid, productId);
+    setComplete(true);
+    setTimeout(() => {
+      setComplete(false);
+    }, 3000);
   };
 
   return (
@@ -51,6 +58,7 @@ export default function ProductDetail() {
           >
             장바구니에 추가
           </button>
+          {complete && <span>✔️ 장바구니에 추가되었습니다.</span>}
         </div>
       </div>
     </div>

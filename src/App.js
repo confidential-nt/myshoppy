@@ -31,7 +31,7 @@ function App() {
                 path="/products"
                 element={<Products productRepository={productRepository} />}
               />
-              <Route path="/products/:postId" element={<ProductDetail />} />
+              <Route path="/products/:productId" element={<ProductDetail />} />
               <Route
                 path="/products/add"
                 element={
