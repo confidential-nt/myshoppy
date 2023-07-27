@@ -1,11 +1,22 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
+import { useUserContext } from "../context/UserContext";
+import { useUserRepositoryContext } from "../context/UserRepositoryContext";
 
 export default function ProductDetail() {
   const {
     state: { product },
   } = useLocation();
-  console.log();
+
+  const { uid } = useUserContext();
+  const { userRepository } = useUserRepositoryContext();
+
+  const { productId } = useParams();
+
+  const handleClick = (e) => {
+    if (!uid) return;
+  };
+
   return (
     <div className="pl-5 pr-5">
       <strong className="inline-block mt-3 mb-3 pl-4 font-normal text-xs text-gray-500">
@@ -34,7 +45,9 @@ export default function ProductDetail() {
           </div>
           <button
             type="button"
-            className="block relative bg-shoppypink w-5/6 mr-auto ml-auto text-white text-xl pt-1 pb-1 after:content-[''] after:w-full after:h-full after:absolute after:top-0 after:left-0 after:bg-black/30 after:hidden hover:after:block "
+            className="block cursor-pointer relative bg-shoppypink w-5/6 mr-auto ml-auto text-white text-xl pt-1 pb-1 after:content-[''] after:w-full after:h-full after:absolute after:top-0 after:left-0 after:bg-black/30 after:hidden hover:after:block  disabled:cursor-not-allowed disabled:hover:after:hidden disabled:bg-shoppypink/30"
+            disabled={!Boolean(uid)}
+            onClick={handleClick}
           >
             장바구니에 추가
           </button>
