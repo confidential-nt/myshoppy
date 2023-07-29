@@ -42,19 +42,27 @@ export default class UserRepository {
     return update(ref(database), updates);
   }
 
-  updateCarts(uid, productId) {
+  updateCount(uid, productId, mount) {
     onValue(
       ref(database, "users/" + uid + "/carts/" + productId),
       (snapshot) => {
         const updates = {};
 
         updates["users/" + uid + "/carts/" + productId + "/count"] =
-          snapshot.val().count + 1;
+          snapshot.val().count + mount;
 
         return update(ref(database), updates);
       },
       { onlyOnce: true }
     );
+  }
+
+  deleteCarts(uid, productId) {
+    const updates = {};
+
+    updates["users/" + uid + "/carts/" + productId] = null;
+
+    return update(ref(database), updates);
   }
 
   onUpdateCarts(callback, uid) {

@@ -19,9 +19,7 @@ export default function CartsIcon() {
 
     if (uid) {
       userRepository.onUpdateCarts((carts) => {
-        if (carts) {
-          setNumber(Object.keys(carts).length);
-        }
+        setNumber(carts ? Object.keys(carts).length : 0);
       }, uid);
     }
   }, [uid, userRepository]);
