@@ -12,13 +12,18 @@ export default function CartsIcon() {
   useEffect(() => {
     userRepository.findById(uid, (user) => {
       if (user) {
-        const number = user.carts ? Object.values(user.carts).length : 0;
+        const number = user.carts ? Object.keys(user.carts).length : 0;
         setNumber(number);
       }
     });
-    userRepository.onUpdateCarts((carts) => {
-      setNumber(Object.values(carts).length);
-    }, uid);
+
+    if (uid) {
+      userRepository.onUpdateCarts((carts) => {
+        if (carts) {
+          setNumber(Object.keys(carts).length);
+        }
+      }, uid);
+    }
   }, [uid, userRepository]);
 
   return (

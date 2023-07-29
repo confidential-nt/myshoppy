@@ -41,7 +41,10 @@ function App() {
                   />
                 }
               />
-              <Route path="/carts" element={<Carts />} />
+              <Route
+                path="/carts"
+                element={<Carts productRepository={productRepository} />}
+              />
             </Route>
           </Routes>
         </UserRepositoryProvider>

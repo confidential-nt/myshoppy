@@ -5,10 +5,12 @@ import { useUserRepositoryContext } from "../context/UserRepositoryContext";
 
 export default function ProductDetail() {
   const [complete, setComplete] = useState(false);
-
   const {
     state: { product },
   } = useLocation();
+  const [selectedOption, setSelectedOption] = useState(
+    product.options.split(",")[0]
+  );
 
   const { uid } = useUserContext();
   const { userRepository } = useUserRepositoryContext();
@@ -17,7 +19,7 @@ export default function ProductDetail() {
 
   const handleClick = async () => {
     if (!uid) return;
-    userRepository.updateCarts(uid, productId);
+    userRepository.updateCartsOnce(uid, productId, selectedOption);
     setComplete(true);
     setTimeout(() => {
       setComplete(false);
@@ -42,6 +44,8 @@ export default function ProductDetail() {
             <select
               name="options"
               className="block grow border border-dashed border-shoppypink pl-1 pr-1 pt-1 pb-1"
+              value={selectedOption}
+              onChange={(e) => setSelectedOption(e.target.value)}
             >
               {product.options.split(",").map((s) => (
                 <option key={s} value={s}>

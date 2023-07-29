@@ -31,10 +31,30 @@ export default class UserRepository {
     });
   }
 
-  updateCarts(uid, productId) {
+  updateCartsOnce(uid, productId, option) {
     const updates = {};
-    updates["users/" + uid + "/carts/" + productId] = true;
+
+    updates["users/" + uid + "/carts/" + productId] = {
+      count: 1,
+      option,
+    };
+
     return update(ref(database), updates);
+  }
+
+  updateCarts(uid, productId) {
+    onValue(
+      ref(database, "users/" + uid + "/carts/" + productId),
+      (snapshot) => {
+        const updates = {};
+
+        updates["users/" + uid + "/carts/" + productId + "/count"] =
+          snapshot.val().count + 1;
+
+        return update(ref(database), updates);
+      },
+      { onlyOnce: true }
+    );
   }
 
   onUpdateCarts(callback, uid) {

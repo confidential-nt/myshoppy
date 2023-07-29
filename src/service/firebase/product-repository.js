@@ -15,6 +15,16 @@ export default class ProductRepository {
     });
   }
 
+  findById(productId, callback) {
+    onValue(
+      ref(database, "products/" + productId),
+      (snapshot) => {
+        callback(snapshot.val());
+      },
+      { onlyOnce: true }
+    );
+  }
+
   findAll(callback) {
     onValue(
       ref(database, "products/"),
