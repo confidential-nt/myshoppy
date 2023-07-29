@@ -1,11 +1,22 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { AiOutlineMinusSquare, AiOutlinePlusSquare } from "react-icons/ai";
 import { BsTrashFill } from "react-icons/bs";
 
 export default function CartsCard({ id, productInCarts }) {
+  const navigate = useNavigate();
   return (
     <li className="flex items-center mb-2 last:mb-0">
-      <div className="w-1/3 mr-4 basis-1/6">
+      <div
+        className="w-1/3 mr-4 basis-1/6 cursor-pointer"
+        onClick={() =>
+          navigate(`/products/${id}`, {
+            state: {
+              product: productInCarts,
+            },
+          })
+        }
+      >
         <img
           src={productInCarts.imageURL}
           alt={productInCarts.name}

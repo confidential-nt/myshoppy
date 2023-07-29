@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useUserContext } from "../context/UserContext";
 import { useUserRepositoryContext } from "../context/UserRepositoryContext";
 import CartsCard from "../components/CartsCard";
+import TotalPrice from "../components/TotalPrice";
 
 export default function Carts({ productRepository }) {
   // eslint-disable-next-line
@@ -48,6 +49,9 @@ export default function Carts({ productRepository }) {
               <CartsCard key={k} id={k} productInCarts={v} />
             ))}
       </ul>
+      {!Object.keys(carts).length ? null : (
+        <TotalPrice productInCarts={carts} />
+      )}
     </>
   );
 }
