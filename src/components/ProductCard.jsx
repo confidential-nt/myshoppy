@@ -12,7 +12,7 @@ export default function ProductCard({ product, id }) {
           },
         })
       }
-      className="basis-1/4 mr-3 last:mr-0 cursor-pointer shadow-lg hover:scale-105 transition"
+      className="cursor-pointer shadow-lg hover:scale-105 transition"
     >
       <div className="w-full">
         <img
