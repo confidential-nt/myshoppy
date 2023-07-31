@@ -26,12 +26,8 @@ export default class ProductRepository {
   }
 
   findAll(callback) {
-    onValue(
-      ref(database, "products/"),
-      (snapshot) => {
-        callback(snapshot.val());
-      },
-      { onlyOnce: true }
-    );
+    onValue(ref(database, "products/"), (snapshot) => {
+      callback(snapshot.val());
+    });
   }
 }
