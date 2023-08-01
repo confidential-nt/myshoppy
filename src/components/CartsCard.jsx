@@ -14,15 +14,15 @@ export default function CartsCard({
   const [count, setCount] = useState(productInCarts.count);
 
   const handleAddCount = () => {
-    onAddCount(id);
+    onAddCount.mutate(id);
     setCount((prev) => prev + 1);
   };
   const handleDeleteCount = () => {
-    onDeleteCount(id);
+    onDeleteCount.mutate(id);
     setCount((prev) => prev - 1);
   };
   const handleDeleteCarts = () => {
-    onDeleteCarts(id);
+    onDeleteCarts.mutate(id);
     setCount(0);
   };
 

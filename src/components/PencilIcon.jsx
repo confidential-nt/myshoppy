@@ -10,7 +10,7 @@ export default function PencilIcon() {
   const [isAdmin, setIsAdmin] = useState(false);
 
   useEffect(() => {
-    userRepository.findById(uid, (user) => {
+    userRepository.findById(uid).then((user) => {
       if (user && user.isAdmin) {
         setIsAdmin(true);
       } else {

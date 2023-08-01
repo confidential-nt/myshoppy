@@ -1,5 +1,5 @@
 import { database } from "./firebase";
-import { ref, set, onValue, update } from "firebase/database";
+import { ref, set, onValue, update, get } from "firebase/database";
 
 export default class UserRepository {
   insert(user) {
@@ -13,18 +13,14 @@ export default class UserRepository {
     });
   }
 
-  findById(uid, callback) {
-    onValue(
-      ref(database, "users/" + uid),
-      (snapshot) => {
-        callback(snapshot.val());
-      },
-      { onlyOnce: true }
+  findById(uid) {
+    return get(ref(database, "users/" + uid)).then((snapshot) =>
+      snapshot.val()
     );
   }
 
   #isExists(uid, callback) {
-    this.findById(uid, (value) => {
+    this.findById(uid).then((value) => {
       if (!value) {
         callback();
       }
