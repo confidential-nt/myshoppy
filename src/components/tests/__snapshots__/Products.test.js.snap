@@ -1,0 +1,78 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Products 스냅샷 테스트 1`] = `
+<DocumentFragment>
+  <ul
+    class="grid grid-cols-4 gap-3 gap-y-4 mt-4 pr-2 pl-3"
+  >
+    <li
+      class="cursor-pointer shadow-lg hover:scale-105 transition"
+    >
+      <div
+        class="w-full"
+      >
+        <img
+          alt="핫핑크 후드 HOODY"
+          class="w-full h-full"
+          src="http://image/"
+        />
+      </div>
+      <div
+        class="p-4"
+      >
+        <div
+          class="flex justify-between"
+        >
+          <h4>
+            핫핑크 후드 HOODY
+          </h4>
+          <strong
+            class="font-normal"
+          >
+            ₩40000
+          </strong>
+        </div>
+        <span
+          class="text-sm text-gray-700"
+        >
+          여성
+        </span>
+      </div>
+    </li>
+    <li
+      class="cursor-pointer shadow-lg hover:scale-105 transition"
+    >
+      <div
+        class="w-full"
+      >
+        <img
+          alt="블랙 후드 HOODY"
+          class="w-full h-full"
+          src="http://image/"
+        />
+      </div>
+      <div
+        class="p-4"
+      >
+        <div
+          class="flex justify-between"
+        >
+          <h4>
+            블랙 후드 HOODY
+          </h4>
+          <strong
+            class="font-normal"
+          >
+            ₩40000
+          </strong>
+        </div>
+        <span
+          class="text-sm text-gray-700"
+        >
+          여성
+        </span>
+      </div>
+    </li>
+  </ul>
+</DocumentFragment>
+`;
