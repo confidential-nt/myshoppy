@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProductCard 스냅샷 테스트 1`] = `
+<DocumentFragment>
+  <li
+    class="cursor-pointer shadow-lg hover:scale-105 transition"
+  >
+    <div
+      class="w-full"
+    >
+      <img
+        alt="핫핑크 후드 HOODY"
+        class="w-full h-full"
+        src="http://image/"
+      />
+    </div>
+    <div
+      class="p-4"
+    >
+      <div
+        class="flex justify-between"
+      >
+        <h4>
+          핫핑크 후드 HOODY
+        </h4>
+        <strong
+          class="font-normal"
+        >
+          ₩40000
+        </strong>
+      </div>
+      <span
+        class="text-sm text-gray-700"
+      >
+        여성
+      </span>
+    </div>
+  </li>
+</DocumentFragment>
+`;
