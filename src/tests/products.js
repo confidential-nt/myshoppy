@@ -53,3 +53,15 @@ export const fakeProductInCarts = {
     option: "xs",
   },
 };
+
+export const singleFakeProductInCarts = {
+  category: "여성",
+  desc: "스타일리쉬한 핑크색이 돋보이는 핫핑크색 후드",
+  imageURL: "http://image/",
+  name: "핫핑크 후드 HOODY",
+  options: "xs,s,m,l,xl",
+  price: "40000",
+  uid: "abcd",
+  count: 1,
+  option: "xs",
+};

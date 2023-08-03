@@ -15,6 +15,7 @@ export default function CartsCard({
 
   const handleAddCount = () => {
     onAddCount.mutate(id);
+    console.log("add");
     setCount((prev) => prev + 1);
   };
   const handleDeleteCount = () => {
@@ -39,6 +40,8 @@ export default function CartsCard({
                 },
               })
             }
+            role="img"
+            aria-label="go-to-product-detail"
           >
             <img
               src={productInCarts.imageURL}
@@ -59,14 +62,24 @@ export default function CartsCard({
                 type="button"
                 className="mr-1"
                 onClick={handleDeleteCount}
+                aria-label="deleteCount"
               >
                 <AiOutlineMinusSquare />
               </button>
               <span className="mr-1 flex items-center">{count}</span>
-              <button type="button" className="mr-3" onClick={handleAddCount}>
+              <button
+                type="button"
+                className="mr-3"
+                onClick={handleAddCount}
+                aria-label="addCount"
+              >
                 <AiOutlinePlusSquare />
               </button>
-              <button type="button" onClick={handleDeleteCarts}>
+              <button
+                type="button"
+                onClick={handleDeleteCarts}
+                aria-label="deleteCarts"
+              >
                 <BsTrashFill />
               </button>
             </div>
