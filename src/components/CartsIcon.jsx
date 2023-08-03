@@ -10,12 +10,14 @@ export default function CartsIcon() {
   const { userRepository } = useUserRepositoryContext();
 
   useEffect(() => {
-    userRepository.findById(uid).then((user) => {
-      if (user) {
-        const number = user.carts ? Object.keys(user.carts).length : 0;
-        setNumber(number);
-      }
-    });
+    if (uid) {
+      userRepository.findById(uid).then((user) => {
+        if (user) {
+          const number = user.carts ? Object.keys(user.carts).length : 0;
+          setNumber(number);
+        }
+      });
+    }
 
     if (uid) {
       userRepository.onUpdateCarts((carts) => {
