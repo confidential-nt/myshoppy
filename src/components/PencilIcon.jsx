@@ -6,6 +6,7 @@ import { useUserRepositoryContext } from "../context/UserRepositoryContext";
 
 export default function PencilIcon() {
   const { uid } = useUserContext();
+
   const { userRepository } = useUserRepositoryContext();
   const [isAdmin, setIsAdmin] = useState(false);
 

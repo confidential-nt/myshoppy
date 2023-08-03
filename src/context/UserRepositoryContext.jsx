@@ -1,7 +1,7 @@
 import { createContext, useContext } from "react";
 import UserRepository from "../service/firebase/user-repository";
 
-const UserRepositoryContext = createContext();
+export const UserRepositoryContext = createContext();
 const userRepository = new UserRepository();
 
 export function UserRepositoryProvider({ children }) {
