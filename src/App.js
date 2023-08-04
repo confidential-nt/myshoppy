@@ -10,6 +10,7 @@ import { UserProvider } from "./context/UserContext";
 import { AuthProvider } from "./context/AuthContext";
 import { UserRepositoryProvider } from "./context/UserRepositoryContext";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import ImageUploader from "./service/cloudinary/image-uploader";
 import ProductRepository from "./service/firebase/product-repository";
 
@@ -54,6 +55,7 @@ function App() {
                 />
               </Route>
             </Routes>
+            <ReactQueryDevtools initialIsOpen={false} />
           </QueryClientProvider>
         </UserRepositoryProvider>
       </UserProvider>
