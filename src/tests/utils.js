@@ -2,6 +2,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { MemoryRouter, Routes } from "react-router-dom";
 import { UserContext } from "../context/UserContext";
 import { UserRepositoryContext } from "../context/UserRepositoryContext";
+import { AuthContext } from "../context/AuthContext";
 
 export function withRouter(routes, initialEntry = "/") {
   return (
@@ -25,6 +26,12 @@ export function withAllUserContexts(children, repository, { uid, logUserIn }) {
         {children}
       </UserRepositoryContext.Provider>
     </UserContext.Provider>
+  );
+}
+
+export function withAuthContext(children, auth) {
+  return (
+    <AuthContext.Provider value={{ auth }}>{children}</AuthContext.Provider>
   );
 }
 
