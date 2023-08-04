@@ -1,0 +1,93 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProductDetail 스냅샷 테스트 1`] = `
+<DocumentFragment>
+  <div
+    class="pl-5 pr-5"
+  >
+    <strong
+      class="inline-block mt-3 mb-3 pl-4 font-normal text-xs text-gray-500"
+    >
+      &gt; 여성
+    </strong>
+    <div
+      class="flex"
+    >
+      <img
+        alt="핫핑크 후드 HOODY"
+        class="basis-3/5"
+        src="http://image/"
+      />
+      <div
+        class="basis-2/5 ml-5 pt-3"
+      >
+        <div
+          class="border-b pb-1 mb-2"
+        >
+          <h3
+            class="font-semibold text-xl mb-1"
+          >
+            핫핑크 후드 HOODY
+          </h3>
+          <span
+            class="font-semibold"
+          >
+            ₩40000
+          </span>
+        </div>
+        <p
+          class="text-sm mb-3"
+        >
+          스타일리쉬한 핑크색이 돋보이는 핫핑크색 후드
+        </p>
+        <div
+          class="flex items-center mb-3"
+        >
+          <span
+            class="text-shoppypink text-xs mr-2"
+          >
+            옵션:
+          </span>
+          <select
+            class="block grow border border-dashed border-shoppypink pl-1 pr-1 pt-1 pb-1"
+            name="options"
+          >
+            <option
+              value="xs"
+            >
+              xs
+            </option>
+            <option
+              value="s"
+            >
+              s
+            </option>
+            <option
+              value="m"
+            >
+              m
+            </option>
+            <option
+              value="l"
+            >
+              l
+            </option>
+            <option
+              value="xl"
+            >
+              xl
+            </option>
+          </select>
+        </div>
+        <button
+          class="block cursor-pointer relative bg-shoppypink w-5/6 mr-auto ml-auto text-white text-xl pt-1 pb-1 after:content-[''] after:w-full after:h-full after:absolute after:top-0 after:left-0 after:bg-black/30 after:hidden hover:after:block  disabled:cursor-not-allowed disabled:hover:after:hidden disabled:bg-shoppypink/30"
+          disabled=""
+          type="button"
+        >
+          장바구니에 추가
+        </button>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

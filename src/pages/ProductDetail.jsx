@@ -33,7 +33,7 @@ export default function ProductDetail() {
       }, 3000);
     },
     {
-      onSuccess: () => queryClient.invalidateQueries("carts"),
+      onSuccess: () => queryClient.invalidateQueries(["carts", uid]),
     }
   );
 
