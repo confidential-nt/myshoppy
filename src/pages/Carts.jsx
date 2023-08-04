@@ -52,7 +52,7 @@ export default function Carts({ productRepository }) {
     (productId) => userRepository.updateCount(uid, productId, 1),
 
     {
-      onSuccess: () => queryClient.invalidateQueries("carts"),
+      onSuccess: () => queryClient.invalidateQueries(["carts", uid]),
     }
   );
 
@@ -60,7 +60,7 @@ export default function Carts({ productRepository }) {
     (productId) => userRepository.updateCount(uid, productId, -1),
 
     {
-      onSuccess: () => queryClient.invalidateQueries("carts"),
+      onSuccess: () => queryClient.invalidateQueries(["carts", uid]),
     }
   );
 
@@ -69,7 +69,7 @@ export default function Carts({ productRepository }) {
       userRepository.deleteCarts(uid, productId);
     },
     {
-      onSuccess: () => queryClient.invalidateQueries("carts"),
+      onSuccess: () => queryClient.invalidateQueries(["carts", uid]),
     }
   );
 
