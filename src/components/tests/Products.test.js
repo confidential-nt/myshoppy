@@ -43,6 +43,16 @@ describe("Products", () => {
     });
   });
 
+  it("product 목록이 올바르게 렌더되어야한다", async () => {
+    fakeProductRepository.findAll.mockImplementation(() => fakeProducts);
+    renderProducts();
+    await waitFor(() => {
+      expect(screen.getAllByRole("listitem")).toHaveLength(
+        Object.keys(fakeProducts).length
+      );
+    });
+  });
+
   function renderProducts() {
     return render(
       withReactQuery(
