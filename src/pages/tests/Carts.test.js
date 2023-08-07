@@ -5,9 +5,29 @@ import {
   withRouter,
 } from "../../tests/utils";
 import { Route } from "react-router-dom";
-import Carts, { productsInCarts } from "../Carts";
+import Carts from "../Carts";
 import { fakeProducts } from "../../tests/products";
 import { fakeAdminUser } from "../../tests/user";
+import * as TotalPrice from "../../components/TotalPrice";
+
+jest.mock("../../components/TotalPrice");
+
+const mockTotalPriceProp = jest.fn();
+
+TotalPrice.default = function MockTotalPrice({ productInCarts }) {
+  mockTotalPriceProp(productInCarts);
+  const products = Object.entries(productInCarts).map(([k, v]) => v);
+  const totalPrice = products.reduce((acc, cur) => {
+    return cur.count * cur.price + acc;
+  }, 0);
+  const deliveryFee = 3000;
+  return (
+    <div className="flex flex-col items-center">
+      <span>총가격</span>
+      <strong className="text-shoppypink">₩{totalPrice + deliveryFee}</strong>
+    </div>
+  );
+};
 
 describe("Carts", () => {
   const productRepository = {
@@ -24,6 +44,7 @@ describe("Carts", () => {
     userRepository.deleteCarts.mockReset();
     userRepository.findById.mockReset();
     userRepository.updateCount.mockReset();
+    jest.clearAllMocks();
   });
 
   it("스냅샷 테스트", async () => {
@@ -83,31 +104,30 @@ describe("Carts", () => {
     });
   });
 
-  it("올바른 productsInCarts를 계산해야한다", async () => {
+  it("TotalPrice는 올바른 productsInCarts를 받아야 한다", async () => {
     productRepository.findAll.mockImplementation(() =>
       Promise.resolve(fakeProducts)
     );
     userRepository.findById.mockImplementation(() =>
       Promise.resolve(fakeAdminUser)
     );
-    const result = await productsInCarts(
-      "1",
-      userRepository,
-      productRepository
+    renderCarts();
+    await screen.findAllByRole("listitem");
+    expect(mockTotalPriceProp).toHaveBeenCalledWith(
+      expect.objectContaining({
+        1: {
+          category: "여성",
+          desc: "스타일리쉬한 핑크색이 돋보이는 핫핑크색 후드",
+          imageURL: "http://image/",
+          name: "핫핑크 후드 HOODY",
+          options: "xs,s,m,l,xl",
+          price: "40000",
+          uid: "abcd",
+          count: 1,
+          option: "s",
+        },
+      })
     );
-    expect(result).toStrictEqual({
-      1: {
-        category: "여성",
-        desc: "스타일리쉬한 핑크색이 돋보이는 핫핑크색 후드",
-        imageURL: "http://image/",
-        name: "핫핑크 후드 HOODY",
-        options: "xs,s,m,l,xl",
-        price: "40000",
-        uid: "abcd",
-        count: 1,
-        option: "s",
-      },
-    });
   });
 
   function renderCarts() {

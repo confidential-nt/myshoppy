@@ -117,83 +117,16 @@ exports[`Carts 스냅샷 테스트 1`] = `
     </li>
   </ul>
   <div
-    class="flex flex-col w-10/12 mr-auto ml-auto pt-10"
+    class="flex flex-col items-center"
   >
-    <div
-      class="flex justify-around items-center mb-10"
+    <span>
+      총가격
+    </span>
+    <strong
+      class="text-shoppypink"
     >
-      <div
-        class="flex flex-col items-center"
-      >
-        <span>
-          상품 총액
-        </span>
-        <strong
-          class="text-shoppypink"
-        >
-          ₩40000
-        </strong>
-      </div>
-      <span>
-        <svg
-          fill="currentColor"
-          height="1em"
-          stroke="currentColor"
-          stroke-width="0"
-          viewBox="0 0 1024 1024"
-          width="1em"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm192 472c0 4.4-3.6 8-8 8H544v152c0 4.4-3.6 8-8 8h-48c-4.4 0-8-3.6-8-8V544H328c-4.4 0-8-3.6-8-8v-48c0-4.4 3.6-8 8-8h152V328c0-4.4 3.6-8 8-8h48c4.4 0 8 3.6 8 8v152h152c4.4 0 8 3.6 8 8v48z"
-          />
-        </svg>
-      </span>
-      <div
-        class="flex flex-col items-center"
-      >
-        <span>
-          배송비
-        </span>
-        <strong
-          class="text-shoppypink"
-        >
-          ₩3000
-        </strong>
-      </div>
-      <span>
-        <svg
-          fill="currentColor"
-          height="1em"
-          stroke="currentColor"
-          stroke-width="0"
-          viewBox="0 0 448 512"
-          width="1em"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M416 304H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32zm0-192H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
-          />
-        </svg>
-      </span>
-      <div
-        class="flex flex-col items-center"
-      >
-        <span>
-          총가격
-        </span>
-        <strong
-          class="text-shoppypink"
-        >
-          ₩43000
-        </strong>
-      </div>
-    </div>
-    <button
-      class="bg-shoppypink text-white text-xl pt-1 pb-1"
-    >
-      주문하기
-    </button>
+      ₩43000
+    </strong>
   </div>
 </DocumentFragment>
 `;

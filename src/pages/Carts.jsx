@@ -6,7 +6,7 @@ import { useUserRepositoryContext } from "../context/UserRepositoryContext";
 import CartsCard from "../components/CartsCard";
 import TotalPrice from "../components/TotalPrice";
 
-export async function productsInCarts(uid, userRepository, productRepository) {
+async function productsInCarts(uid, userRepository, productRepository) {
   const user = await userRepository.findById(uid);
   if (!user) return null;
   if (!user.carts) return null;
