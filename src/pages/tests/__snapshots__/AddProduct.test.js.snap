@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AddProduct 스냅샷 테스트 1`] = `
+<DocumentFragment>
+  <div
+    class="w-11/12 mr-auto ml-auto"
+  >
+    <h2
+      class="text-center pt-2 pb-3 font-bold text-lg"
+    >
+      새로운 제품 등록
+    </h2>
+    <form
+      class="flex flex-col"
+    >
+      <label
+        class="hidden"
+        for="file-uploader"
+      >
+        Upload file:
+      </label>
+      <input
+        accept="image/*"
+        class="border pt-3 pb-3 pl-2 mb-2"
+        id="file-uploader"
+        type="file"
+      />
+      <input
+        class="border pt-3 pb-3 pl-2 mb-2"
+        placeholder="제품명"
+        type="text"
+        value=""
+      />
+      <input
+        class="border pt-3 pb-3 pl-2 mb-2"
+        placeholder="가격"
+        type="text"
+        value=""
+      />
+      <input
+        class="border pt-3 pb-3 pl-2 mb-2"
+        placeholder="카테고리"
+        type="text"
+        value=""
+      />
+      <input
+        class="border pt-3 pb-3 pl-2 mb-2"
+        placeholder="제품 설명"
+        type="text"
+        value=""
+      />
+      <input
+        class="border pt-3 pb-3 pl-2 mb-2"
+        placeholder="옵션들(콤마(,)로 구분)"
+        type="text"
+        value=""
+      />
+      <button
+        class="bg-shoppypink text-white w-11/12 ml-auto mr-auto pt-2 pb-2 text-xl "
+        type="submit"
+      >
+        제품 등록하기
+      </button>
+    </form>
+  </div>
+</DocumentFragment>
+`;

@@ -73,10 +73,14 @@ export default function AddProduct({ imageUploader, productRepository }) {
           </div>
         )}
         <form className="flex flex-col" onSubmit={handleSubmit}>
+          <label className="hidden" htmlFor="file-uploader">
+            Upload file:
+          </label>
           <input
             className="border pt-3 pb-3 pl-2 mb-2"
             type="file"
             accept="image/*"
+            id="file-uploader"
             onChange={handleFileChange}
           />
           <input
