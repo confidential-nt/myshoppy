@@ -15,7 +15,6 @@ export default function CartsCard({
 
   const handleAddCount = () => {
     onAddCount.mutate(id);
-    console.log("add");
     setCount((prev) => prev + 1);
   };
   const handleDeleteCount = () => {
