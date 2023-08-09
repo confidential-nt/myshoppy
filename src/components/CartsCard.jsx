@@ -18,6 +18,10 @@ export default function CartsCard({
     setCount((prev) => prev + 1);
   };
   const handleDeleteCount = () => {
+    if (count === 1) {
+      handleDeleteCarts();
+      return;
+    }
     onDeleteCount.mutate(id);
     setCount((prev) => prev - 1);
   };
