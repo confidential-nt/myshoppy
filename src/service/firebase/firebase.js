@@ -3,14 +3,14 @@ import { getAuth } from "firebase/auth";
 import { getDatabase } from "firebase/database";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBs07Act5ZHPZRLhcu7yI6By6Y6IVycGzw",
-  authDomain: "shoppy-11b22.firebaseapp.com",
-  projectId: "shoppy-11b22",
-  storageBucket: "shoppy-11b22.appspot.com",
-  messagingSenderId: "31659362398",
-  appId: "1:31659362398:web:8bd1dea161f244ea980ccf",
-  measurementId: "G-RS4BXVD8DD",
-  databaseURL: "https://shoppy-11b22-default-rtdb.firebaseio.com",
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_FIREBASE_APP_ID,
+  measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID,
+  databaseURL: process.env.REACT_APP_FIREBASE_DATABASE_URL,
 };
 
 // Initialize Firebase
