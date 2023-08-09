@@ -60,7 +60,7 @@ export default function Header() {
           <button
             onClick={handleLogin}
             type="button"
-            className="bg-shoppypink text-white text-sm  lg:text-base lg:py-1 py-0 lg:px-3 px-1"
+            className="bg-shoppypink text-white text-xs lg:text-base py-1 lg:px-3 px-1"
           >
             Login
           </button>
