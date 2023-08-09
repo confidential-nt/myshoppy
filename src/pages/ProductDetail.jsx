@@ -42,7 +42,7 @@ export default function ProductDetail() {
       <strong className="inline-block mt-3 mb-3 pl-4 font-normal text-xs text-gray-500">
         &gt; {product.category}
       </strong>
-      <div className="flex">
+      <div className="flex flex-col lg:flex-row">
         <img src={product.imageURL} alt={product.name} className="basis-3/5" />
         <div className="basis-2/5 ml-5 pt-3">
           <div className="border-b pb-1 mb-2">
