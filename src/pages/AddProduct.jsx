@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useUserContext } from "../context/UserContext";
 import { useNavigate } from "react-router-dom";
+import { useQueryClient } from "@tanstack/react-query";
 
 export default function AddProduct({ imageUploader, productRepository }) {
   const [loading, setLoading] = useState(false);
@@ -14,6 +15,7 @@ export default function AddProduct({ imageUploader, productRepository }) {
 
   const { uid } = useUserContext();
   const navigate = useNavigate();
+  const queryClient = useQueryClient();
 
   useEffect(() => {
     if (!uid) {
@@ -33,6 +35,7 @@ export default function AddProduct({ imageUploader, productRepository }) {
       desc,
       options,
     });
+    queryClient.invalidateQueries(["products"]);
     setLoading(false);
     setComplete(true);
     setFile(null);
