@@ -33,9 +33,9 @@ export default function CartsCard({
   return (
     <>
       {count > 0 ? (
-        <li className="flex items-center mb-2 last:mb-0">
+        <li className="flex items-center mb-4 lg:mb-2 last:mb-0">
           <div
-            className="w-1/3 mr-4 basis-1/6 cursor-pointer"
+            className="w-1/3 mr-2 lg:mr-4 basis-1/4 lg:basis-1/6 cursor-pointer"
             onClick={() =>
               navigate(`/products/${id}`, {
                 state: {
@@ -54,8 +54,8 @@ export default function CartsCard({
           </div>
           <div className="flex justify-between flex-grow basis-2/3">
             <div className="flex flex-col justify-center">
-              <h3>{productInCarts.name}</h3>
-              <span className="uppercase text-shoppypink font-bold">
+              <h3 className="text-xs lg:textbase">{productInCarts.name}</h3>
+              <span className="uppercase text-shoppypink font-bold text-xs lg:textbase">
                 {productInCarts.option}
               </span>
               <span>₩{productInCarts.price}</span>

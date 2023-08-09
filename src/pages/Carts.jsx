@@ -82,7 +82,7 @@ export default function Carts({ productRepository }) {
   return (
     <>
       <h1 className="pt-5 pb-3 font-bold text-center">내 장바구니</h1>
-      <ul className="pt-4 pb-4 pl-6 pr-6 border-t border-b w-11/12 mr-auto ml-auto">
+      <ul className="py-2 lg:py-4 px-3 lg:px-6 border-t border-b w-11/12 mr-auto ml-auto">
         {isLoading ? (
           <p>is loading...</p>
         ) : error ? (

@@ -13,22 +13,26 @@ export default function TotalPrice({ productInCarts }) {
     <div className="flex flex-col w-10/12 mr-auto ml-auto pt-10">
       <div className="flex justify-around items-center mb-10">
         <div className="flex flex-col items-center">
-          <span>상품 총액</span>
-          <strong className="text-shoppypink">₩{totalPrice}</strong>
+          <span className="text-sm lg:text-base">상품 총액</span>
+          <strong className="text-shoppypink text-sm lg:text-base">
+            ₩{totalPrice}
+          </strong>
         </div>
-        <span>
+        <span className="text-sm lg:text-base">
           <AiFillPlusCircle />
         </span>
         <div className="flex flex-col items-center">
-          <span>배송비</span>
-          <strong className="text-shoppypink">₩{deliveryFee}</strong>
+          <span className="text-sm lg:text-base">배송비</span>
+          <strong className="text-shoppypink text-sm lg:text-base">
+            ₩{deliveryFee}
+          </strong>
         </div>
-        <span>
+        <span className="text-sm lg:text-base">
           <FaEquals />
         </span>
         <div className="flex flex-col items-center">
-          <span>총가격</span>
-          <strong className="text-shoppypink">
+          <span className="text-sm lg:text-base">총가격</span>
+          <strong className="text-shoppypink text-sm lg:text-base">
             ₩{totalPrice + deliveryFee}
           </strong>
         </div>
