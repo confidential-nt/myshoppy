@@ -27,7 +27,7 @@ export default function CartsIcon() {
   }, [uid, userRepository]);
 
   return (
-    <Link to="/carts" className="mr-7 text-xl relative">
+    <Link to="/carts" className="mr-3 lg:mr-7 text-sm lg:text-xl relative">
       {uid && (
         <div className="absolute -right-3 -top-2 text-xs text-white bg-red-500 rounded-full w-4 text-center">
           {number}

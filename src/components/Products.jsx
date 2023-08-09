@@ -12,7 +12,7 @@ export default function Products({ productRepository }) {
   });
 
   return (
-    <ul className="grid grid-cols-4 gap-3 gap-y-4 mt-4 pr-2 pl-3">
+    <ul className="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-4 gap-3 gap-y-4 mt-4 pr-2 pl-3">
       {isLoading && <p>Loading...</p>}
       {error && <p>Something is wrong 😖</p>}
       {!products && null}

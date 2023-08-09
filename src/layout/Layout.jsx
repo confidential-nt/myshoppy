@@ -4,7 +4,7 @@ import Header from "../components/Header";
 
 export default function Layout() {
   return (
-    <div className="pr-36 pl-36">
+    <div className="px-10 lg:px-28">
       <Header />
       <main className="pb-12">
         <Outlet />

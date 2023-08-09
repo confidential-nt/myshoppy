@@ -23,7 +23,7 @@ export default function PencilIcon() {
   return (
     <>
       {isAdmin && (
-        <Link to="/products/add" className="mr-7 text-xl">
+        <Link to="/products/add" className="mr-3 lg:mr-7 text-sm lg:text-xl">
           <BsPencilFill />
         </Link>
       )}
