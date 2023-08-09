@@ -12,24 +12,24 @@ import * as TotalPrice from "../../components/TotalPrice";
 
 jest.mock("../../components/TotalPrice");
 
-const mockTotalPriceProp = jest.fn();
-
-TotalPrice.default = function MockTotalPrice({ productInCarts }) {
-  mockTotalPriceProp(productInCarts);
-  const products = Object.entries(productInCarts).map(([k, v]) => v);
-  const totalPrice = products.reduce((acc, cur) => {
-    return cur.count * cur.price + acc;
-  }, 0);
-  const deliveryFee = 3000;
-  return (
-    <div className="flex flex-col items-center">
-      <span>총가격</span>
-      <strong className="text-shoppypink">₩{totalPrice + deliveryFee}</strong>
-    </div>
-  );
-};
-
 describe("Carts", () => {
+  const mockTotalPriceProp = jest.fn();
+
+  TotalPrice.default = function MockTotalPrice({ productInCarts }) {
+    mockTotalPriceProp(productInCarts);
+    const products = Object.entries(productInCarts).map(([k, v]) => v);
+    const totalPrice = products.reduce((acc, cur) => {
+      return cur.count * cur.price + acc;
+    }, 0);
+    const deliveryFee = 3000;
+    return (
+      <div className="flex flex-col items-center">
+        <span>총가격</span>
+        <strong className="text-shoppypink">₩{totalPrice + deliveryFee}</strong>
+      </div>
+    );
+  };
+
   const productRepository = {
     findAll: jest.fn(),
   };
@@ -44,6 +44,7 @@ describe("Carts", () => {
     userRepository.deleteCarts.mockReset();
     userRepository.findById.mockReset();
     userRepository.updateCount.mockReset();
+    mockTotalPriceProp.mockReset();
     jest.clearAllMocks();
   });
 
