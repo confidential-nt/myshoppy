@@ -4,10 +4,13 @@ export default class ImageUploader {
   async upload(file) {
     const formData = new FormData();
     formData.append("file", file);
-    formData.append("upload_preset", "q6nxw20m");
+    formData.append(
+      "upload_preset",
+      process.env.REACT_APP_CLOUDINARY_UPLOAD_PRESET
+    );
     const response = await axios({
       method: "POST",
-      url: "https://api.cloudinary.com/v1_1/dypkkfbys/image/upload",
+      url: process.env.REACT_APP_CLOUDINARY_UPLOAD_URL,
       data: formData,
     });
 
